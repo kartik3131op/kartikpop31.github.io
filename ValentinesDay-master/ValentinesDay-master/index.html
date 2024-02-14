@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>I love you</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+            <span class="comments">In the heart of mine, a tale is spun,</span><br/>
+            <span class="comments">Of Vanshika fair, beneath the sun.</span><br/>
+            <span class="comments">Her name a melody, sweet and true,</span><br/>
+            <span class="comments">In my eyes, a vision, pure and new.</span><br/>
+            </br>
+            <span class="keyword">In every glance, I find her grace,</span><br/>
+            <span class="keyword">A gentle smile on her face.</span><br/>
+            <span class="keyword">In her laughter, I hear a song,</span><br/>
+            <span class="keyword">A symphony where I belong.</span><br/>
+            </br>
+            <span class="comments">Her eyes, like stars in velvet skies,</span><br/>
+            <span class="comments">Hold secrets, where my heart lies.</span><br/>
+            <span class="comments">In their depths, oceans unfold,</span><br/>
+            <span class="comments">A world of wonder, a story untold.</span><br/>
+            </br>
+            <span class="keyword">Her laughter, like a gentle breeze,</span><br/>
+            <span class="keyword">Brings peace to my soul, at ease.</span><br/>
+            <span class="keyword">In its melody, I find my rest,</span><br/>
+            <span class="keyword">A haven of love, in her quest.</span><br/>
+            </br>
+            <span class="comments">With each step she takes, the world aglow,</span><br/>
+            <span class="comments">A garden of beauty, in the ebb and flow.</span><br/>
+            <span class="comments">In her presence, I find my home,</span><br/>
+            <span class="comments">In her embrace, no need to roam.</span><br/>
+            </br>
+            <span class="keyword">For I see in Vanshika's light,</span><br/>
+            <span class="keyword">A beacon of hope, in darkest night.</span><br/>
+            <span class="keyword">In her beauty, my heart takes flight,</span><br/>
+            <span class="keyword">In her love, my world shines bright.</span><br/>
+            </br>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					Vanshika, I have fallen in love with you for
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					I love you, in every universe<br/>	
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	together.setFullYear(2020, 7, 5);
+	together.setHours(15);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none");	
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
